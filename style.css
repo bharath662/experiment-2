@@ -9,7 +9,7 @@
 /* Page background */
 body {
     min-height: 100vh;
-    background: linear-gradient(135deg, #4e73df, #1cc88a);
+    background: linear-gradient(135deg, #ebecf0, #1cc88a);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,12 +47,14 @@ body {
 .form-group label {
     display: block;
     font-weight: bold;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
     color: #444;
 }
 
+/* Inputs, select, textarea */
 .form-group input,
-.form-group select {
+.form-group select,
+.form-group textarea {
     width: 100%;
     padding: 10px;
     border-radius: 6px;
@@ -61,8 +63,14 @@ body {
     outline: none;
 }
 
+.form-group textarea {
+    resize: none;
+}
+
+/* Focus effect */
 .form-group input:focus,
-.form-group select:focus {
+.form-group select:focus,
+.form-group textarea:focus {
     border-color: #4e73df;
 }
 
@@ -76,6 +84,26 @@ body {
     flex: 1;
 }
 
+/* Gender radio buttons */
+.form-group input[type="radio"] {
+    width: auto;
+    margin-right: 5px;
+}
+
+.form-group label[for="male"],
+.form-group label[for="female"],
+.form-group label[for="other"] {
+    display: inline-block;
+    margin-right: 15px;
+    font-weight: normal;
+}
+
+/* Declaration checkbox */
+.form-group input[type="checkbox"] {
+    width: auto;
+    margin-right: 6px;
+}
+
 /* Button */
 .submit-btn {
     width: 100%;
@@ -87,7 +115,7 @@ body {
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 15px;
     transition: background 0.3s ease;
 }
 
