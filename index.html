@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>College Admission Form</title>
+    <title>College Admission</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,35 +12,87 @@
         <h2>College Admission</h2>
         <p>Please fill out the form below to register.</p>
         
-        <form action="#">
+        <form>
+            <!-- Full Name -->
             <div class="form-group">
                 <label for="fullname">Full Name</label>
-                <input type="text" id="fullname" placeholder="Enter your full name" required>
+                <input
+                    type="text"
+                    id="fullname"
+                    placeholder="Enter your full name"
+                    required
+                    minlength="3"
+                    pattern="[A-Za-z ]+"
+                    title="Name should contain only letters and spaces (min 3 characters)">
             </div>
 
+            <!-- Email -->
             <div class="form-group">
                 <label for="email">Email Address</label>
-                <input type="email" id="email" placeholder="example@mail.com" required>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="example@mail.com"
+                    required>
             </div>
 
+            <!-- Phone & DOB -->
             <div class="form-row">
                 <div class="form-group">
                     <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" placeholder="1234567890" required>
+                    <input
+                        type="tel"
+                        id="phone"
+                        placeholder="1234567890"
+                        required
+                        pattern="[0-9]{10}"
+                        title="Phone number must be exactly 10 digits">
                 </div>
+
                 <div class="form-group">
                     <label for="dob">Date of Birth</label>
-                    <input type="date" id="dob" required>
+                    <input
+                        type="date"
+                        id="dob"
+                        required
+                        max="2008-12-31">
                 </div>
             </div>
 
+            <!-- Gender -->
+            <div class="form-group">
+                <label>Gender</label>
+                <div>
+                    <input type="radio" name="gender" id="male" value="male" required>
+                    <label for="male">Male</label>
+
+                    <input type="radio" name="gender" id="female" value="female">
+                    <label for="female">Female</label>
+
+                </div>
+            </div>
+
+            <!-- Address -->
+            <div class="form-group">
+                <label for="address">Address</label>
+                <textarea
+                    id="address"
+                    rows="3"
+                    placeholder="Enter your full address"
+                    required
+                    minlength="10"></textarea>
+            </div>
+
+            <!-- Course -->
             <div class="form-group">
                 <label for="course">Preferred Department</label>
-                <select id="course">
+                <select id="course" required>
+                    <option value="">-- Select Department --</option>
                     <option value="cs">Computer Science</option>
-                    <option value="eng">Engineering</option>
+                    <option value="eng">Civil</option>
                     <option value="arts">Arts & Humanities</option>
-                    <option value="sci">Pure Science</option>
+                    <option value="sci">Science</option>
+                    <option value="me">Mechanical</option> 
                 </select>
             </div>
 
